@@ -123,6 +123,10 @@
       information in this version.
     </p>
 
+    <p>
+      When Share Analytics is on, limited information such as your appearance preference and subscription status is also sent to Mixpanel, as described in Section 6.
+    </p>
+
     <h2>3. Apple Health</h2>
 
     <p>
@@ -234,6 +238,10 @@
     </p>
 
     <p>
+      Analytics is enabled by default. You can turn off Share Analytics in Settings → Privacy. Turning it off stops Suuth from collecting new app activity for analytics, and your choice remains in effect when you reopen the app. Activity already queued before you turned it off may still be delivered. Turning it off does not delete previously collected analytics or reset or delete your anonymous installation identifier. Turning it back on resumes analytics using the same identifier. Suuth does not provide a separate analytics identity reset or deletion control.
+    </p>
+
+    <p>
       The analytics system uses a randomly generated installation
       identifier. It is not based on your name, email address,
       phone number, Apple Health information, or advertising
@@ -241,8 +249,11 @@
     </p>
 
     <p>
-      Automatic event collection is disabled. Suuth defines its
-      analytics events manually.
+      The installation identifier is stored in the device’s Keychain. Mixpanel also uses a device identifier and links analytics activity from the same installation. These identifiers do not contain your name, but the analytics records are linked rather than completely anonymous.
+    </p>
+
+    <p>
+      Mixpanel’s automatic activity-event collection is disabled. Suuth defines its app activity events manually. Mixpanel still adds technical information such as app and SDK versions, device model, operating system, screen dimensions, timestamps and event/session identifiers. It also sends identity-linking information when identifying the installation. Suuth’s analytics attributes include session count, appearance preference, subscription status and subscription type.
     </p>
 
     <p>
@@ -260,9 +271,7 @@
     </p>
 
     <p>
-      Suuth does not send profile details, hydration entries,
-      drink amounts, reminder schedules, or Apple Health
-      information to Mixpanel.
+      Suuth does not send your profile name, age, gender, height, weight, hydration entry records, drink amounts, reminder schedules, or Apple Health information to Mixpanel. When Share Analytics is on, recording a drink may send an event indicating that the drink-entry feature was used, without the drink quantity.
     </p>
 
     <h2>7. Ads, sale, and tracking</h2>
@@ -310,6 +319,10 @@
     </p>
 
     <p>
+      Deleting hydration history does not delete your profile, other preferences, installation identifier or previously collected analytics. Turning off Share Analytics also does not delete previously collected analytics. Removing the app should not be treated as a request to delete analytics already held by Mixpanel or as a guaranteed reset of the Keychain installation identifier.
+    </p>
+
+    <p>
       If Apple Health is connected, Suuth will also try to remove
       matching hydration entries that Suuth previously added to
       Apple Health.
@@ -326,22 +339,13 @@
     </p>
 
     <p>
-      You may contact us with questions about analytics information
-      or to request deletion of analytics information associated
-      with your installation.
-    </p>
-
-    <p>
-      We may need reasonable information to locate the relevant
-      installation data.
+      Suuth does not currently provide an in-app mechanism for deleting previously collected analytics. You may contact us with questions about analytics information.
     </p>
 
     <h2>10. Data retention and security</h2>
 
     <p>
-      Local hydration and preference information remains on your
-      device until you delete it, delete the related entry, reset
-      the app’s local data, or remove the app.
+      Local hydration and preference information remains on your device until you delete the relevant information using the available controls or remove the app. The hydration-history control does not remove all profile or preference data. The installation identifier and separately stored analytics are described in Sections 6 and 9.
     </p>
 
     <p>
@@ -393,6 +397,7 @@
     <p>You can:</p>
 
     <ul>
+      <li>turn off Share Analytics in Settings → Privacy to stop new app analytics, as described in Section 6</li>
       <li>use Suuth without connecting Apple Health</li>
       <li>
         change Apple Health permissions in the Health app or
@@ -404,7 +409,7 @@
       <li>
         cancel Suuth Premium through your Apple Account settings
       </li>
-      <li>contact us with a privacy or deletion request</li>
+      <li>contact us with privacy questions</li>
     </ul>
 
     <h2>14. Third-party services</h2>
